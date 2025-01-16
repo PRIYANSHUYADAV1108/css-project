@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blockchain Business Platform</title>
+  <style>
+    /* Same CSS as before */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #4CAF50;
+      color: #fff;
+      padding: 1rem 0;
+      text-align: center;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      background: #333;
+      padding: 0.5rem 0;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+    }
+
+    nav a:hover {
+      background: #4CAF50;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: #f4f4f4;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+      padding: 2rem;
+    }
+
+    .feature {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .feature h3 {
+      margin-bottom: 1rem;
+    }
+
+    .cta {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: #4CAF50;
+      color: #fff;
+    }
+
+    .cta a {
+      display: inline-block;
+      background: #fff;
+      color: #4CAF50;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      text-decoration: none;
+      margin-top: 1rem;
+    }
+
+    .cta a:hover {
+      background: #ddd;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem 0;
+      background: #333;
+      color: #fff;
+    }
+
+  .contact {
+    padding: 2rem;
+    background: #f9f9f9;
+    text-align: center;
+  }
+
+  .contact h2 {
+    margin-bottom: 1rem;
+  }
+
+  #contactForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  #contactForm input, #contactForm textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  #contactForm button {
+    padding: 0.5rem 1rem;
+    background: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  #contactForm button:hover {
+    background: #45a049;
+  }
+
+  #responseMessage {
+    margin-top: 1rem;
+    color: #4CAF50;
+}
+
+
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Blockchain Business Platform</h1>
+    <p>Helping small businesses grow with blockchain technology</p>
+  </header>
+
+  <nav>
+    <a href="#features" class="scroll-link">Features</a>
+    <a href="#community" class="scroll-link">Community</a>
+    <a href="#contact" class="scroll-link">Contact Us</a>
+  </nav>
+
+  <div class="hero">
+    <h1>Empowering Small Businesses</h1>
+    <p>Promote your business, build a community, and grow with blockchain solutions.</p>
+  </div>
+  <section id="features" class="features">
+    <div class="feature">
+      <h3>Marketing Campaigns</h3>
+      <p>Create and track transparent advertising campaigns.</p>
+    </div>
+    <div class="feature">
+      <h3>Rewards & Tokens</h3>
+      <p>Reward your customers with blockchain-based loyalty tokens.</p>
+    </div>
+    <div class="feature">
+      <h3>Community Building</h3>
+      <p>Engage your audience and grow your brand community.</p>
+    </div>
+    <div class="feature">
+      <h3>Crowdfunding</h3>
+      <p>Raise funds easily with tokenized crowdfunding.</p>
+    </div>
+  </section>
+
+  <section id="community" class="cta">
+    <h2>Join the Revolution</h2>
+    <p>Start your journey with blockchain solutions today.</p>
+    <a href="#" id="get-started">Get Started</a>
+  </section> 
+  <section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <form id="contactForm">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+      
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+      
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" required></textarea>
+      
+      <button type="submit">Send</button>
+    </form>
+    <p id="responseMessage"></p>
+  </section>
+
+
+  <footer>
+    <p>&copy; 2025 Blockchain Business Platform. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('.scroll-link').forEach(link => {
+      link.addEventListener('click', event => {
+        event.preventDefault();
+        const targetId = event.target.getAttribute('href').substring(1);
+        document.getElementById(targetId).scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+
+    // Popup message for the Get Started button
+    document.getElementById('get-started').addEventListener('click', () => {
+      alert('Thank you for your interest! More features are coming soon.');
+    });
+  const contactForm = document.getElementById('contactForm');
+  const responseMessage = document.getElementById('responseMessage');
+
+  contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const formData = {
+      name: document.getElementById('name').value,
+      email: document.getElementById('email').value,
+      message: document.getElementById('message').value,
+    };
+
+    try {
+      const response = await fetch('http://localhost:5000/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+      responseMessage.textContent = data.message;
+      contactForm.reset();
+    } catch (error) {
+      responseMessage.textContent = 'The massage has been send.';
+    }});
+  </script>
+</body>
+</html>
